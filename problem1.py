@@ -22,3 +22,11 @@ enter a number:4
 ****
 
 """
+height_width = int(input("Enter a number: "))
+
+if height_width < 1 or height_width > 9:
+    print("Invalid input. Please enter an integer value less than 10.")
+else:
+    for i in range(height_width): 
+        print("*"*height_width, end="")
+        print()

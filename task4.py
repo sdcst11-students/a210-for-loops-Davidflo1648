@@ -39,7 +39,7 @@ for i in range(13):
     if payment < 0:
         break
 
-    balance = balance + purchases - payment
+    balance = purchases - payment
 
     if balance > 0:
         interest = 0.02 * balance
@@ -49,3 +49,4 @@ for i in range(13):
     print("Your closing balance is $" + str(balance))
 
     month = month + 1
+    finalbalance= balance + balance

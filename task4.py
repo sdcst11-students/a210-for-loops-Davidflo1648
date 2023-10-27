@@ -25,13 +25,13 @@ Your closing balance is $51.51
 """
 month = 1
 
-# loop until the user enters a negative number for purchases or payments
+finalbalance = 0
+
 for i in range(13):
 
     purchases = float(input("Enter total purchases for month(" + str(month) + ") : "))
 
     if purchases < 0:
-
         break
 
     payment = float(input("Enter total payments for month(" + str(month) + ")  : "))
@@ -39,14 +39,21 @@ for i in range(13):
     if payment < 0:
         break
 
-    balance = purchases - payment
+    initial_balance = purchases - payment
 
-    if balance > 0:
-        interest = 0.02 * balance
-        balance = balance + interest
+    interest = 0.02 * initial_balance
+
+    balance = initial_balance + interest
+
+    finalbalance += balance
+
+    if interest > 0:
         print("2% interest has been charged:", interest)
 
-    print("Your closing balance is $" + str(balance))
+    print("Your closing balance for month", month, "is $" + str(balance))
 
     month = month + 1
-    finalbalance= balance + balance
+
+print("Your final balance after", month - 1, "months is $" + str(finalbalance))
+
+
